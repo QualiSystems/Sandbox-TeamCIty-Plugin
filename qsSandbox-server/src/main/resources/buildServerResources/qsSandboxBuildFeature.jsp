@@ -71,6 +71,7 @@
       <props:textProperty name="${bean.qsSandboxServerKey}" className="longField"/>
     </div>
     <span class="error" id="error_${bean.qsSandboxServerKey}"></span>
+    <span class="smallNote">Specify the CloudShell server & port. example: http://10.10.10.10:82</span>
   </td>
 </tr>
 

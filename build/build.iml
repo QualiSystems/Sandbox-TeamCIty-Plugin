@@ -62,7 +62,7 @@
     <orderEntry type="library" name="Maven: commons-collections:commons-collections:3.2" level="project" />
     <orderEntry type="library" name="Maven: commons-lang:commons-lang:2.3" level="project" />
     <orderEntry type="library" name="Maven: net.sf.ezmorph:ezmorph:1.0.3" level="project" />
-    <orderEntry type="library" name="Maven: com.quali.cloudshell:sandbox-api:1.0.3" level="project" />
+    <orderEntry type="library" name="Maven: com.quali.cloudshell:sandbox-api:1.0.4" level="project" />
     <orderEntry type="library" name="Maven: junit:junit:4.12" level="project" />
     <orderEntry type="module" module-name="qsSandbox-common" />
     <orderEntry type="module" module-name="qsSandbox-server" />
