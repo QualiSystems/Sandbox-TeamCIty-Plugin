@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamcity-plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:schemas-jetbrains-com:teamcity-plugin-v1-xml">
+  <info>
+    <name>qsSandbox</name>
+    <display-name>qsSandbox</display-name>
+    <version>@Version@</version>
+    <description>Provides an ability to use Quali CloudShell sandboxes in you build process</description>
+    <download-url>https://github.com/QualiSystems/Sandbox-TeamCIty-Plugin</download-url>
+    <email>tomer.a@quali.com</email>
+    <vendor>
+      <name>Quali</name>
+      <url>http://Quali.com</url>
+      <logo>http://qa-financial.com/wp-content/uploads/2016/05/Quali-logo-300x212.jpg</logo>
+    </vendor>
+  </info>
+  <deployment use-separate-classloader="true" />
+</teamcity-plugin>

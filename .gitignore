@@ -1,0 +1,9 @@
+build/target/
+qsSandbox-server/target/
+qsSandbox-agent/target/
+qsSandbox-common/target/
+.idea/
+target/
+plugin-agent/
+plugin/
+backup/
