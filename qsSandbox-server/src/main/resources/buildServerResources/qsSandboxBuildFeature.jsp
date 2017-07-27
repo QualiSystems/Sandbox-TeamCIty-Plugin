@@ -65,6 +65,17 @@
 </tr>
 
 <tr>
+  <th><label for="${bean.qsSandboxParamKey}">Params: <l:star/></label></th>
+  <td>
+    <div class="completionIconWrapper">
+      <props:textProperty name="${bean.qsSandboxParamKey}" className="longField"/>
+    </div>
+    <span class="error" id="error_${bean.qsSandboxParamKey}"></span>
+    <span class="smallNote">Specify the Sandbox parameters</span>
+  </td>
+</tr>
+
+<tr>
   <th><label for="${bean.qsSandboxServerKey}">Server: <l:star/></label></th>
   <td>
     <div class="completionIconWrapper">
@@ -74,6 +85,4 @@
     <span class="smallNote">Specify the CloudShell server & port. example: http://10.10.10.10:82</span>
   </td>
 </tr>
-
-
 

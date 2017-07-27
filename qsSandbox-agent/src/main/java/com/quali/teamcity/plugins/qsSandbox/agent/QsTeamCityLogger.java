@@ -1,6 +1,6 @@
 package com.quali.teamcity.plugins.qsSandbox.agent;
 
-import com.quali.cloudshell.QsLogger;
+import com.quali.cloudshell.logger.QsLogger;
 import jetbrains.buildServer.agent.SimpleBuildLogger;
 
 public class QsTeamCityLogger extends QsLogger {

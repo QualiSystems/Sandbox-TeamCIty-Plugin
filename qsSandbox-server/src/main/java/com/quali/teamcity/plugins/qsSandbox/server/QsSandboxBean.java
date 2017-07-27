@@ -25,6 +25,11 @@ public class QsSandboxBean {
   }
 
   @NotNull
+  public String getQsSandboxParamKey() {
+    return Constants.PARAMS_VAR;
+  }
+
+  @NotNull
   public String getQsSandboxDomainKey() {
     return Constants.DOMAIN_VAR;
   }
