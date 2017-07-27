@@ -1,6 +1,6 @@
 package com.quali.teamcity.plugins.qsSandbox.agent;
 
-import com.quali.cloudshell.QsLogger;
+import com.quali.cloudshell.logger.QsLogger;
 import jetbrains.buildServer.agent.SimpleBuildLogger;
 
 public class QsTeamCityLogger extends QsLogger {
@@ -12,15 +12,15 @@ public class QsTeamCityLogger extends QsLogger {
     }
 
     @Override
-    public void Debug(String s) {
+    public void debug(String s) {
         throw new UnsupportedOperationException();
     }
 
     @Override
-    public void Info(String s) {
+    public void info(String s) {
         listener.message(s);
     }
 
     @Override
-    public void Error(String s) { listener.error(s);}
+    public void error(String s) { listener.error(s);}
 }
