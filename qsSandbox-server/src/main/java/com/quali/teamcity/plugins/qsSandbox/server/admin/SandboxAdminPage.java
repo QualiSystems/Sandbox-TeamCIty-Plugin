@@ -41,12 +41,13 @@ public class SandboxAdminPage extends AdminPage {
     public void fillModel(@NotNull Map<String, Object> model, @NotNull HttpServletRequest request){
         super.fillModel(model, request);
 
-        model.put("serverAddress", sandboxAdminSettings.getServerAddress());
-        model.put("username", sandboxAdminSettings.getUsername());
-        model.put("domain", sandboxAdminSettings.getDomain());
-        model.put("ignoreSsl", sandboxAdminSettings.getIgnoreSsl());
-        model.put("password", sandboxAdminSettings.getPassword());
-        model.put("disabled", !sandboxAdminSettings.getDisabled());
+        model.put("sandboxSettings", new QsSandboxSettingsBean(sandboxAdminSettings.getServerAddress(),
+                sandboxAdminSettings.getUsername(),
+                sandboxAdminSettings.getPassword(),
+                sandboxAdminSettings.getDomain(),
+                sandboxAdminSettings.getIgnoreSsl(),
+                !sandboxAdminSettings.getDisabled()));
+
         model.put("jspHome", this.jspHome);
     }
 

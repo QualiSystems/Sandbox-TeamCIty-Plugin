@@ -2,6 +2,8 @@ package com.quali.teamcity.plugins.qsSandbox.server;
 
 import com.quali.teamcity.plugins.qsSandbox.common.Constants;
 import jetbrains.buildServer.serverSide.ServerPaths;
+import jetbrains.buildServer.serverSide.crypt.EncryptUtil;
+import jetbrains.buildServer.util.StringUtil;
 
 import java.io.File;
 import java.io.FileReader;
@@ -36,7 +38,7 @@ public class SandboxAdminSettings {
         FileWriter outFile = new FileWriter(keyFile);
         prop.put("serverAddress", this.serverAddress);
         prop.put("username", this.username);
-        prop.put("password", this.password);
+        prop.put("password", scramble(this.password));
         prop.put("domain", this.domain);
         prop.put("ignoreSsl", Boolean.toString(this.ignoreSsl));
         prop.put("disabled", Boolean.toString(this.disabled));
@@ -58,7 +60,7 @@ public class SandboxAdminSettings {
 
             this.serverAddress = prop.getProperty("serverAddress", "");
             this.username = prop.getProperty("username", "");
-            this.password = prop.getProperty("password", "");
+            this.password = unscramble(prop.getProperty("password", ""));
             this.domain = prop.getProperty("domain", "");
             this.disabled = Boolean.parseBoolean(prop.getProperty("disabled", "false"));
 
@@ -88,6 +90,13 @@ public class SandboxAdminSettings {
         return keyFile;
     }
 
+    private String scramble(String str) {
+        return StringUtil.isEmpty(str) ? str : EncryptUtil.scramble(str);
+    }
+
+    private String unscramble(String str) {
+        return StringUtil.isEmpty(str) ? str : EncryptUtil.unscramble(str);
+    }
 
     public String getServerAddress() {
         return serverAddress;
