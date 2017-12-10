@@ -1,7 +1,7 @@
 build/target/
-qsSandbox-server/target/
-qsSandbox-agent/target/
-qsSandbox-common/target/
+teamcity-cloudshell-plugin-server/target/
+teamcity-cloudshell-plugin-agent/target/
+teamcity-cloudshell-plugin-common/target/
 .idea/
 target/
 plugin-agent/
