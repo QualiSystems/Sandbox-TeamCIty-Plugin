@@ -9,6 +9,7 @@
         <minorVersion>1</minorVersion>
         <currentVersion>${majorVersion}.${minorVersion}</currentVersion>
         <teamcity-version>10.0</teamcity-version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <version>${currentVersion}</version>

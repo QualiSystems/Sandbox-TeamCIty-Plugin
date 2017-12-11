@@ -3,7 +3,7 @@
   <info>
     <name>sandbox</name>
     <display-name>CloudShell Sandbox</display-name>
-    <version>0.9.1</version>
+    <version>@Version@</version>
     <description>Provides an ability to use Quali CloudShell sandboxes in you build process</description>
     <download-url>https://github.com/QualiSystems/Sandbox-TeamCIty-Plugin</download-url>
     <email>st@qualisystems.com</email>
