@@ -5,14 +5,11 @@
   <artifactId>teamcity-cloudshell-plugin</artifactId>
 
     <properties>
-        <majorVersion>0.9</majorVersion>
-        <minorVersion>1</minorVersion>
-        <currentVersion>${majorVersion}.${minorVersion}</currentVersion>
         <teamcity-version>10.0</teamcity-version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <version>${currentVersion}</version>
+    <version>0.9.1</version>
 
   <packaging>pom</packaging>
 

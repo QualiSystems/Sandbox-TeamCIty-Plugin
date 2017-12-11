@@ -5,8 +5,7 @@
     <parent>
         <artifactId>teamcity-cloudshell-plugin</artifactId>
         <groupId>com.quali.teamcity.plugins</groupId>
-        <version>${currentVersion}</version>
-        <relativePath>..</relativePath>
+        <version>0.9.1</version>
     </parent>
 
   <artifactId>teamcity-cloudshell-plugin-build</artifactId>
@@ -21,17 +20,17 @@
       <dependency>
            <groupId>com.quali.teamcity.plugins</groupId>
            <artifactId>teamcity-cloudshell-plugin-agent</artifactId>
-           <version>${currentVersion}</version>
+           <version>0.9.1</version>
       </dependency>
       <dependency>
            <groupId>com.quali.teamcity.plugins</groupId>
            <artifactId>teamcity-cloudshell-plugin-common</artifactId>
-           <version>${currentVersion}</version>
+           <version>0.9.1</version>
       </dependency>
       <dependency>
            <groupId>com.quali.teamcity.plugins</groupId>
            <artifactId>teamcity-cloudshell-plugin-server</artifactId>
-           <version>${currentVersion}</version>
+           <version>0.9.1</version>
       </dependency>
   </dependencies>
   <build>
