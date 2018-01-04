@@ -1,6 +1,7 @@
 package com.quali.teamcity.plugins.sandbox.agent.runner;
 
 import com.quali.cloudshell.QsServerDetails;
+import com.quali.cloudshell.qsExceptions.InvalidApiCallException;
 import com.quali.cloudshell.qsExceptions.SandboxApiException;
 import com.quali.teamcity.plugins.sandbox.agent.QsTeamCityLogger;
 import com.quali.teamcity.plugins.sandbox.agent.SandboxActions;
@@ -56,10 +57,9 @@ public class SandboxBuildProcess implements BuildProcess {
                 String sandboxId = buildRunnerContext.getConfigParameters().get("SANDBOX_ID");
                 sandboxActions.StopSandbox(server, sandboxId, true);
                 buildRunnerContext.getBuild().addSharedConfigParameter(Constants.SANDBOX_ID_CONF, "");
-
             } catch (NoSuchAlgorithmException | IOException | SandboxApiException | KeyManagementException | KeyStoreException e) {
                 e.printStackTrace();
-                qsLogger.error("CloudShell: Stop Sandbox throw an error: " + e.toString());
+                runningBuild.stopBuild("CloudShell: Stop Sandbox throw an error: " + e.toString());
             }
         }
     }
