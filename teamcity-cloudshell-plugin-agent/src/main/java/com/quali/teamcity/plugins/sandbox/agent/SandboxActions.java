@@ -2,6 +2,7 @@ package com.quali.teamcity.plugins.sandbox.agent;
 
 import com.quali.cloudshell.QsServerDetails;
 import com.quali.cloudshell.SandboxApiGateway;
+import com.quali.cloudshell.qsExceptions.InvalidApiCallException;
 import com.quali.cloudshell.qsExceptions.SandboxApiException;
 import jetbrains.buildServer.agent.AgentRunningBuild;
 
@@ -25,6 +26,11 @@ public class SandboxActions {
         SandboxApiGateway gateway = new SandboxApiGateway(logger, server);
         gateway.StopSandbox(sandboxId, waitForComplete);
         logger.info("CloudShell: Sandbox stopped...");
+        try {
+            gateway.VerifyTeardownSucceeded(sandboxId);
+        } catch (InvalidApiCallException e) {
+            logger.info("Teardown process cannot be verified, please use newer version of CloudShell to support this feature.");
+        }
     }
 
     public String StartBlueprint(QsServerDetails server, AgentRunningBuild runningBuild, String blueprint, int duration, int timouet_duration_min, String params) {
@@ -43,7 +49,8 @@ public class SandboxActions {
         try {
             WaitForSetup(server, sandbox, timouet_duration_min);
         } catch (NoSuchAlgorithmException | KeyStoreException | KeyManagementException | SandboxApiException | IOException e) {
-            e.printStackTrace();
+            logger.error("Start blueprint throw an error, aborting build process...");
+            runningBuild.stopBuild(e.getMessage());
         }
         return sandbox;
     }
