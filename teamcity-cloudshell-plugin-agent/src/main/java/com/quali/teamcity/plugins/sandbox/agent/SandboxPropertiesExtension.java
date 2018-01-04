@@ -67,6 +67,7 @@ public class SandboxPropertiesExtension extends AgentLifeCycleAdapter {
           } catch (NoSuchAlgorithmException | KeyStoreException | KeyManagementException | IOException | SandboxApiException e) {
             e.printStackTrace();
             logger.error(e.getMessage());
+            build.stopBuild("CloudShell: Stop Sandbox throw an error: " + e.toString());
           }
         }
       }

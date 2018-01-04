@@ -59,7 +59,7 @@ public class SandboxBuildProcess implements BuildProcess {
                 buildRunnerContext.getBuild().addSharedConfigParameter(Constants.SANDBOX_ID_CONF, "");
             } catch (NoSuchAlgorithmException | IOException | SandboxApiException | KeyManagementException | KeyStoreException e) {
                 e.printStackTrace();
-                qsLogger.error("CloudShell: Stop Sandbox throw an error: " + e.toString());
+                runningBuild.stopBuild("CloudShell: Stop Sandbox throw an error: " + e.toString());
             }
         }
     }
