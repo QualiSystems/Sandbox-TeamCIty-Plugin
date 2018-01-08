@@ -25,7 +25,6 @@ public class SandboxActions {
     public void StopSandbox(QsServerDetails server, String sandboxId, boolean waitForComplete) throws NoSuchAlgorithmException, KeyStoreException, KeyManagementException, SandboxApiException, IOException {
         SandboxApiGateway gateway = new SandboxApiGateway(logger, server);
         gateway.StopSandbox(sandboxId, waitForComplete);
-        logger.info("CloudShell: Sandbox stopped...");
         try {
             gateway.VerifyTeardownSucceeded(sandboxId);
         } catch (InvalidApiCallException e) {
@@ -34,7 +33,6 @@ public class SandboxActions {
     }
 
     public String StartBlueprint(QsServerDetails server, AgentRunningBuild runningBuild, String blueprint, int duration, int timouet_duration_min, String params) {
-        logger.info("CloudShell: Starting sandbox...");
 
         String sandbox = null;
         try {
