@@ -67,9 +67,10 @@ CloudShell sandboxes can also be consumed as a TeamCity build feature. Using san
 
 **To use the CloudShell bulid feature:**
 1. Add The **CloudShell Sandbox** build feature from the build features list.
-2. Fill all required fields.
+2. Fill in all required fields.
 3. Click **Save**.
 
+For example:
 ![Alt text](pics/Screenshot_9.png?raw=true)
 
 When the sandbox is active, the sandbox’s Id and additional information become available in *%SANDBOX_ID%*.
